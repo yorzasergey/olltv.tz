@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">OLL.TV Demo</string>
+    <string name="tv_broadcast_list_error_text">Ups… an error occurred on obtain characters list, please swipe down to try again</string>
+    <string name="tv_broadcast_list_refresh_btn">refresh</string>
+    <string name="tv_broadcast_list_empty_result">Empty result</string>
+    <string name="tv_broadcast_detail_description_title">Description</string>
+    <string name="tv_broadcast_detail_start_time">Start: %s</string>
+    <string name="tv_broadcast_detail_end_time">Stop: %s</string>
+</resources>

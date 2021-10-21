@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.olltv.tz.domen.models.TvBroadcast" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_broadcast_image"
+            android:layout_width="@dimen/tv_broadcast_detail_image_width"
+            android:layout_height="@dimen/tv_broadcast_detail_image_height"
+            android:background="@drawable/bg_tv_broadcast_image"
+            android:layout_margin="@dimen/spacing_8"
+            android:padding="@dimen/tv_broadcast_detail_image_padding"
+            app:imageUrl="@{item.icon}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_broadcast_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/tv_broadcast_item_text_padding"
+            android:text="@{item.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_broadcast_image"
+            app:layout_constraintTop_toTopOf="@+id/iv_broadcast_image"
+            tools:text="Tv broadcast name" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="tv_broadcast_name,iv_broadcast_image"
+            tools:layout_editor_absoluteY="731dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_broadcast_start_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/tv_broadcast_item_text_padding"
+            android:text="@{@string/tv_broadcast_detail_start_time(item.startTime)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barrier_description"
+            tools:text="Start" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_broadcast_end_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/tv_broadcast_item_text_padding"
+            android:text="@{@string/tv_broadcast_detail_end_time(item.stopTime)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_broadcast_start_time"
+            tools:text="End" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_broadcast_description_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/tv_broadcast_item_text_padding"
+            android:text="@string/tv_broadcast_detail_description_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_broadcast_end_time" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_broadcast_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/tv_broadcast_item_text_padding"
+            android:text="@{item.description}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_broadcast_description_title"
+            tools:text="Tv broadcast description" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
